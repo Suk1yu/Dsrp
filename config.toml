@@ -1,0 +1,227 @@
+# ============================================================
+#  DSRP — Android Security Research Platform
+#  Configuration File
+#  Location: dsrp/config.toml
+#
+#  Edit this file to customise DSRP behaviour.
+#  All values here are the defaults — uncomment to override.
+# ============================================================
+
+
+# ─────────────────────────────────────────────────────────────
+# [general] — App-wide settings
+# ─────────────────────────────────────────────────────────────
+[general]
+
+# Defence mode on startup: MONITOR | DEFENSIVE | STRICT
+defense_mode = "DEFENSIVE"
+
+# Dashboard refresh interval in seconds (min 1, max 30)
+dashboard_refresh_secs = 3
+
+# Enable remote threat-intel API calls (VirusTotal, AbuseIPDB, OTX)
+# Set to true only if you have API keys configured below
+enable_remote_intel = true
+
+# Data directory (relative to dsrp/ root)
+data_dir = "data"
+
+# Reports directory (relative to data_dir)
+reports_dir = "data/reports"
+
+
+# ─────────────────────────────────────────────────────────────
+# [api_keys] — Threat intelligence APIs (optional)
+# ─────────────────────────────────────────────────────────────
+[api_keys]
+
+# VirusTotal — https://www.virustotal.com/gui/my-apikey
+virustotal="3a85e9e78c150eb76073629343818023d9454b627b50b29be4cf4f5714dd082e"
+
+# AbuseIPDB — https://www.abuseipdb.com/account/api
+abuseipdb = ""
+
+# AlienVault OTX — https://otx.alienvault.com/api
+otx="e071bbd31082a5c695ecdac6cfe7b8e0a7cab58aadc6a31c0067d9a0df992c66"
+
+# Max API calls per day (to stay within free tier limits)
+daily_api_limit = 200
+
+
+# ─────────────────────────────────────────────────────────────
+# [network] — Network monitoring (Stage 2)
+# ─────────────────────────────────────────────────────────────
+[network]
+
+# Default network interface to monitor
+interface = "wlan0"
+
+# How often to poll active connections (seconds)
+connection_poll_interval = 5
+
+# How often to poll DNS monitor (seconds)
+dns_poll_interval = 3
+
+# WiFi device scan interval (seconds) — heavier, keep >= 60
+wifi_scan_interval = 120
+
+# Resolve remote hostnames (adds latency; set false for battery saving)
+resolve_hostnames = true
+
+# Max connections to keep in history buffer
+connection_history_size = 300
+
+
+# ─────────────────────────────────────────────────────────────
+# [ai] — Machine learning settings (Stage 3)
+# ─────────────────────────────────────────────────────────────
+[ai]
+
+# How often AI anomaly analysis runs (seconds)
+anomaly_analysis_interval = 15
+
+# IsolationForest contamination rate (0.01 – 0.20)
+anomaly_contamination = 0.05
+
+# Number of windows before anomaly model is "ready"
+anomaly_warmup_windows = 20
+
+# Retrain anomaly model every N seconds
+anomaly_retrain_interval = 300
+
+# Use RandomForest for malware model (true) or LogisticRegression (false/lighter)
+malware_use_random_forest = true
+
+# Rolling traffic feature window size (seconds)
+feature_window_secs = 30
+
+
+# ─────────────────────────────────────────────────────────────
+# [ids] — Intrusion detection thresholds (Stage 3)
+# ─────────────────────────────────────────────────────────────
+[ids]
+
+# Port scan: N distinct ports from same source in T seconds
+port_scan_threshold = 10
+port_scan_window_secs = 5.0
+
+# DNS tunneling: max label length before flagging
+dns_label_length_threshold = 40
+
+# DNS tunneling: max queries per minute before flagging
+dns_query_rate_threshold = 80
+
+# Data exfiltration: outbound bytes to single IP in window
+exfil_byte_threshold = 10_000_000
+exfil_window_secs = 60.0
+
+# Beaconing: min packets before regularity check
+beaconing_min_packets = 6
+
+# Beaconing: max jitter ratio to flag (std/mean)
+beaconing_max_jitter = 0.15
+
+# Alert deduplication: suppress same rule+source within N seconds
+alert_dedup_window_secs = 30
+
+
+# ─────────────────────────────────────────────────────────────
+# [defense] — Blocking and policy (Stage 5)
+# ─────────────────────────────────────────────────────────────
+[defense]
+
+# Write blocked domains to hosts file (needs write permission)
+write_hosts_file = false
+
+# Hosts file path (Termux default)
+hosts_file_path = "/data/data/com.termux/files/usr/etc/hosts"
+
+# Domains/IPs to never block (comma-separated)
+whitelist = [
+    "google.com",
+    "googleapis.com",
+    "gstatic.com",
+    "apple.com",
+    "microsoft.com",
+    "cloudflare.com",
+    "localhost",
+    "127.0.0.1",
+]
+
+# TTL for auto-blocked entries (hours, 0 = permanent)
+block_ttl_hours = 0
+
+# Auto-block tracker domains (requires DEFENSIVE or STRICT mode)
+auto_block_trackers = false
+
+# Alert deduplication for response engine (seconds)
+response_dedup_secs = 30
+
+
+# ─────────────────────────────────────────────────────────────
+# [intel] — Threat intelligence cache (Stage 3-4)
+# ─────────────────────────────────────────────────────────────
+[intel]
+
+# Cache TTL for positive hits (seconds) — 24h default
+cache_ttl_secs = 86400
+
+# Cache TTL for clean/"no hit" results (seconds) — 6h
+negative_ttl_secs = 21600
+
+# IOC feed update interval (seconds) — 24h default
+ioc_update_interval_secs = 86400
+
+# Max IOCs to pull per feed per update
+ioc_feed_limit = 2000
+
+
+# ─────────────────────────────────────────────────────────────
+# [logging] — Logging system (added in infrastructure layer)
+# ─────────────────────────────────────────────────────────────
+[logging]
+
+# Log level: DEBUG | INFO | WARNING | ERROR
+level = "INFO"
+
+# Log to file (in addition to console)
+file_enabled = true
+
+# Log file path (relative to data_dir)
+file_path = "data/dsrp.log"
+
+# Max log file size in MB before rotation
+max_file_size_mb = 5
+
+# Number of rotated backup files to keep
+backup_count = 3
+
+# Include module name in log lines
+show_module = true
+
+
+# ─────────────────────────────────────────────────────────────
+# [resources] — Resource governor (added in infrastructure layer)
+# ─────────────────────────────────────────────────────────────
+[resources]
+
+# CPU % threshold — pause heavy tasks when exceeded
+cpu_throttle_threshold = 75
+
+# CPU % threshold — skip non-critical background work
+cpu_skip_threshold = 90
+
+# Max threads for background work (WiFi scan, graph rebuild, etc.)
+max_worker_threads = 3
+
+# RAM threshold in MB — start pruning caches when exceeded
+ram_throttle_mb = 400
+
+# RAM threshold in MB — emergency cache clear
+ram_critical_mb = 600
+
+# Interval for resource monitor checks (seconds)
+monitor_interval_secs = 10
+
+# Enable adaptive throttling (auto-slow background tasks under load)
+adaptive_throttling = true
