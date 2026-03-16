@@ -1,0 +1,18 @@
+2026-03-17 02:46:17 [INFO    ] dsrp.core_engine — DSRPCore init  mode=DEFENSIVE  remote_intel=False
+2026-03-17 02:46:18 [INFO    ] dsrp.core_engine — ConnectionTracker started
+2026-03-17 02:46:18 [INFO    ] dsrp.core_engine — DNSMonitor started
+2026-03-17 02:46:18 [INFO    ] dsrp.core_engine — PacketMetadataCollector started
+2026-03-17 02:46:18 [INFO    ] dsrp.core_engine — NetworkMapper started  interval=120s
+2026-03-17 02:46:25 [INFO    ] dsrp.core_engine — ConnectionTracker started
+2026-03-17 02:46:25 [INFO    ] dsrp.core_engine — DNSMonitor started
+2026-03-17 02:46:25 [INFO    ] dsrp.core_engine — PacketMetadataCollector started
+2026-03-17 02:46:25 [INFO    ] dsrp.core_engine — NetworkMapper started  interval=120s
+2026-03-17 02:54:28 [INFO    ] dsrp.core_engine — DSRPCore init  mode=DEFENSIVE  remote_intel=False
+2026-03-17 02:54:28 [INFO    ] dsrp.core_engine — ConnectionTracker started
+2026-03-17 02:54:28 [INFO    ] dsrp.core_engine — DNSMonitor started
+2026-03-17 02:54:28 [INFO    ] dsrp.core_engine — PacketMetadataCollector started
+2026-03-17 02:54:28 [INFO    ] dsrp.core_engine — NetworkMapper started  interval=120s
+2026-03-17 02:54:35 [INFO    ] dsrp.core_engine — ConnectionTracker started
+2026-03-17 02:54:35 [INFO    ] dsrp.core_engine — DNSMonitor started
+2026-03-17 02:54:35 [INFO    ] dsrp.core_engine — PacketMetadataCollector started
+2026-03-17 02:54:35 [INFO    ] dsrp.core_engine — NetworkMapper started  interval=120s

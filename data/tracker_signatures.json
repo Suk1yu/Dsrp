@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Huawei Analytics",
+    "category": "Analytics",
+    "classes": ["com.huawei.hms.analytics"],
+    "domains": ["datacollector.cloud.huawei.com"],
+    "risk": "HIGH",
+    "description": "Huawei Mobile Services analytics"
+  },
+  {
+    "name": "Xiaomi Analytics",
+    "category": "Analytics",
+    "classes": ["com.miui.analytics"],
+    "domains": ["data.mistat.xiaomi.com"],
+    "risk": "HIGH",
+    "description": "Xiaomi MIUI analytics SDK"
+  },
+  {
+    "name": "TikTok/ByteDance",
+    "category": "Analytics",
+    "classes": ["com.bytedance.sdk", "com.tiktok.open.sdk"],
+    "domains": ["analytics.tiktok.com", "log.tiktok.com"],
+    "risk": "CRITICAL",
+    "description": "TikTok/ByteDance analytics and data collection"
+  },
+  {
+    "name": "Yandex AppMetrica",
+    "category": "Analytics",
+    "classes": ["com.yandex.metrica"],
+    "domains": ["appmetrica.yandex.com"],
+    "risk": "HIGH",
+    "description": "Yandex mobile analytics"
+  },
+  {
+    "name": "Criteo",
+    "category": "Advertising",
+    "classes": ["com.criteo.publisher"],
+    "domains": ["ssp.criteo.com", "gum.criteo.com"],
+    "risk": "HIGH",
+    "description": "Criteo retargeting advertising"
+  },
+  {
+    "name": "Digital Turbine / Locker",
+    "category": "Advertising",
+    "classes": ["com.locker", "com.digitalturbine"],
+    "domains": ["adspirit.de", "locker.digitalturbine.com"],
+    "risk": "CRITICAL",
+    "description": "Lock screen advertising SDK"
+  },
+  {
+    "name": "Liftoff / Vungle v2",
+    "category": "Advertising",
+    "classes": ["com.liftoff.sdk", "com.vungle.liftoff"],
+    "domains": ["ads.api.vungle.com"],
+    "risk": "HIGH",
+    "description": "Liftoff/Vungle mobile advertising"
+  },
+  {
+    "name": "Remerge",
+    "category": "Attribution",
+    "classes": ["io.remerge"],
+    "domains": ["api.remerge.io"],
+    "risk": "MEDIUM",
+    "description": "Remerge retargeting and attribution"
+  },
+  {
+    "name": "CleverTap",
+    "category": "Marketing",
+    "classes": ["com.clevertap.android"],
+    "domains": ["wzrkt.com", "clevertap.com"],
+    "risk": "MEDIUM",
+    "description": "CleverTap customer engagement"
+  },
+  {
+    "name": "WebEngage",
+    "category": "Marketing",
+    "classes": ["com.webengage.sdk"],
+    "domains": ["c.webengage.com"],
+    "risk": "MEDIUM",
+    "description": "WebEngage marketing automation"
+  },
+  {
+    "name": "MoEngage",
+    "category": "Marketing",
+    "classes": ["com.moengage.android"],
+    "domains": ["sdk-01.moengage.com"],
+    "risk": "MEDIUM",
+    "description": "MoEngage customer engagement"
+  },
+  {
+    "name": "Iterable",
+    "category": "Marketing",
+    "classes": ["com.iterable.iterableapi"],
+    "domains": ["api.iterable.com"],
+    "risk": "LOW",
+    "description": "Iterable marketing automation"
+  },
+  {
+    "name": "Adobe Analytics",
+    "category": "Analytics",
+    "classes": ["com.adobe.mobile", "com.adobe.marketing"],
+    "domains": ["adobedc.net", "metrics.adobe.com"],
+    "risk": "HIGH",
+    "description": "Adobe Experience Cloud analytics"
+  },
+  {
+    "name": "Pendo",
+    "category": "Analytics",
+    "classes": ["sdk.pendo.io"],
+    "domains": ["pendo.io", "data.pendo.io"],
+    "risk": "HIGH",
+    "description": "Pendo product analytics with screen recording"
+  },
+  {
+    "name": "Appcues",
+    "category": "Analytics",
+    "classes": ["com.appcues"],
+    "domains": ["api.appcues.net"],
+    "risk": "MEDIUM",
+    "description": "Appcues in-app onboarding analytics"
+  },
+  {
+    "name": "Instabug",
+    "category": "Crash Reporting",
+    "classes": ["com.instabug"],
+    "domains": ["api.instabug.com"],
+    "risk": "MEDIUM",
+    "description": "Instabug crash reporting and user feedback"
+  },
+  {
+    "name": "Datadog RUM",
+    "category": "APM",
+    "classes": ["com.datadog.android"],
+    "domains": ["browser-intake-datadoghq.com"],
+    "risk": "MEDIUM",
+    "description": "Datadog Real User Monitoring"
+  },
+  {
+    "name": "New Relic Mobile",
+    "category": "APM",
+    "classes": ["com.newrelic.agent.android"],
+    "domains": ["mobile-collector.newrelic.com"],
+    "risk": "MEDIUM",
+    "description": "New Relic mobile APM"
+  }
+]
